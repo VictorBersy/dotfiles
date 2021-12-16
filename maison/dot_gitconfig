@@ -1,0 +1,10 @@
+[user]
+	name = Victor Bersy
+	email = victor.bersy@hey.com
+	signingkey = C4AAF463C2C0CA5D
+[commit]
+	gpgsign = true
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main

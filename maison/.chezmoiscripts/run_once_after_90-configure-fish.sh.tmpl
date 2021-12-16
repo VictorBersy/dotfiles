@@ -1,0 +1,18 @@
+{{ if (and (eq .chezmoi.os "darwin" "linux")) -}}
+#!/usr/bin/fish
+
+function echo_color --argument-names color text
+    echo (set_color --bold $color)$text (set_color normal)
+end
+
+function install_omf
+    echo_color 'green' '📦 Installing Oh My Fish...'
+    curl --silent https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install >install
+    chmod u+x install
+    ./install --noninteractive
+    rm install
+end
+
+install_omf
+
+{{ end -}}

@@ -1,0 +1,10 @@
+set backspace=indent,eol,start
+
+packadd! dracula
+syntax enable
+colorscheme dracula
+
+set directory=$HOME/.vim/swap//
+
+let g:airline_powerline_fonts = 1
+let g:airline_theme='dracula'
