@@ -1,0 +1,17 @@
+#################
+### SELECTRA  ###
+#################
+Host *.aws.selectra.io
+  IdentityFile    ~/.ssh/VictorBersy.pem
+  Port            22
+  User            ec2-user
+
+Host *.selectra.info *.selectra.io
+  IdentityFile    ~/.ssh/selectra
+  Port            4222
+  User            selectra
+
+Host *
+  AddKeysToAgent  yes
+  UseKeychain     yes
+  IdentityFile    ~/.ssh/id_rsa
