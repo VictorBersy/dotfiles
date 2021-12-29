@@ -1,5 +1,5 @@
 {{ if (and (eq .chezmoi.os "darwin" "linux")) -}}
-#!/usr/bin/fish
+#!/usr/bin/env fish
 
 function echo_color --argument-names color text
     echo (set_color --bold $color)$text (set_color normal)
