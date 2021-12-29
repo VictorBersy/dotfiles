@@ -12,7 +12,7 @@ call plug#end()
 set backspace=indent,eol,start
 
 syntax enable
-colorscheme dracula
+silent! colorscheme dracula
 
 set directory=$HOME/.vim/swap//
 
