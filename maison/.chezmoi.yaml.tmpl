@@ -2,6 +2,7 @@
 {{- $headless := false -}}{{/* true if this machine does not have a screen and keyboard */}}
 {{- $ephemeral := false -}}{{/* true if this machine is ephemeral, e.g. a cloud or VM instance */}}
 {{- $personal := false -}}{{/* true if this machine should have personal secrets from LastPass */}}
+{{- "" -}}
 
 {{- $hostname := .chezmoi.hostname -}}
 
@@ -17,50 +18,12 @@
 {{- if not $ephemeral -}}
 {{-   if eq $hostname "Victors-MBP" -}}
 {{-     $personal = true -}}
-{{-   else if stdinIsATTY -}}
-{{-     if hasKey . "headless" -}}
-{{-       $headless = .headless -}}
-{{-     else -}}
-{{-       $headless = promptBool "headless" -}}
-{{-     end -}}
-{{-     if hasKey . "ephemeral" -}}
-{{-       $ephemeral = .ephemeral -}}
-{{-     else -}}
-{{-       $ephemeral = promptBool "ephemeral" -}}
-{{-     end -}}
-{{-   else -}}
-{{-     $headless = true -}}
-{{-     $ephemeral = true -}}
 {{-   end -}}
 {{- end -}}
 
-{{- /* Initializes the name variable with a default value */ -}}
-{{- $name := "Your Name" -}}
-{{- /* If name was previously set, reuses it */ -}}
-{{- if hasKey . "name" -}}
-{{-   $name = .name -}}
-{{- /* Otherwise, if running interactively, prompts for a name */ -}}
-{{- else if $interactive -}}
-{{-   $name = promptString "name" $name -}}
-{{- end -}}
-
-{{- /* Does the same for the email */ -}}
-{{- $email := "your@email.com" -}}
-{{- if hasKey . "email" -}}
-{{-   $email = .email -}}
-{{- else if $interactive -}}
-{{-   $email = promptString "email" $email -}}
-{{- end -}}
-
-{{- if $interactive -}}
-{{-   writeToStdout "💡 Tip: you can re-enter your name and email with `chezmoi init --data=false`.\n" -}}
-{{- end -}}
-
-sourceDir: "{{ .chezmoi.sourceDir }}"
-
 data:
-  name: "{{ $name }}"
-  email: "{{ $email }}"
+  name: "Victor Bersy"
+  email: "victor.bersy@hey.com"
   ephemeral: {{ $ephemeral }}
   headless: {{ $headless }}
   personal: {{ $personal }}
