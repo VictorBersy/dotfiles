@@ -1,6 +1,16 @@
+call plug#begin()
+
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+
+call plug#end()
+
 set backspace=indent,eol,start
 
-packadd! dracula
 syntax enable
 colorscheme dracula
 
