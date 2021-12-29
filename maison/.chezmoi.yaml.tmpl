@@ -1,6 +1,7 @@
 {{/* boolean feature tags */}}
 {{- $headless := false -}}{{/* true if this machine does not have a screen and keyboard */}}
 {{- $ephemeral := false -}}{{/* true if this machine is ephemeral, e.g. a cloud or VM instance */}}
+{{- $personal := false -}}{{/* true if this machine should have personal secrets from LastPass */}}
 
 {{- $hostname := .chezmoi.hostname -}}
 
@@ -61,3 +62,5 @@ data:
   name: "{{ $name }}"
   email: "{{ $email }}"
   ephemeral: {{ $ephemeral }}
+  headless: {{ $headless }}
+  personal: {{ $personal }}
