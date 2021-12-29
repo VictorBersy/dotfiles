@@ -1,3 +1,3 @@
-{{- if (index . "ephemeral") }}
+{{- if or (index . "ephemeral") (index . "personal") -}}
 {{-     onepasswordDocument "yd2bw7cawn47sn62kiocg7paey" -}}
 {{- end -}}
