@@ -13,6 +13,12 @@ function install_omf
     rm install
 end
 
+function setup_path
+    mkdir -p ~/.local/bin/
+    fish_add_path -m ~/.local/bin/
+end
+
 install_omf
+setup_path
 
 {{ end -}}
