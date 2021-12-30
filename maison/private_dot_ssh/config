@@ -12,6 +12,8 @@ Host *.selectra.info *.selectra.io
   User            selectra
 
 Host *
-  AddKeysToAgent  yes
-  UseKeychain     yes
   IdentityFile    ~/.ssh/id_rsa
+  AddKeysToAgent  yes
+{{ if (and (eq .chezmoi.os "darwin")) -}}
+  UseKeychain     yes
+{{ end -}}
